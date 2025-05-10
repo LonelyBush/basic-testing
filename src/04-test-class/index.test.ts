@@ -18,7 +18,6 @@ describe('BankAccount', () => {
   });
 
   test('should throw InsufficientFundsError error when withdrawing more than balance', () => {
-    const newAccount = getBankAccount(300);
     const withdraw = () => {
       newAccount.withdraw(350);
     };
@@ -27,7 +26,6 @@ describe('BankAccount', () => {
   });
 
   test('should throw error when transferring more than balance', () => {
-    const newAccount = getBankAccount(300);
     const secondAccount = getBankAccount(350);
     const transfer = () => {
       newAccount.transfer(350, secondAccount);
@@ -36,7 +34,6 @@ describe('BankAccount', () => {
   });
 
   test('should throw error when transferring to the same account', () => {
-    const newAccount = getBankAccount(300);
     const transfer = () => {
       newAccount.transfer(350, newAccount);
     };
